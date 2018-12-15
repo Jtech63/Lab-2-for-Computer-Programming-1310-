@@ -1,0 +1,110 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+
+// Title and Author
+cout << "Grade Average Program\n";
+cout << "Written by M. VOID\n\n";
+
+//Constants for grade thresholds
+const int
+A_score = 90,
+B_score = 80,
+C_score = 70,
+D_score = 60;
+F_Score = 0;
+
+// Constants
+const int TOTAL_GRADES = 3;
+
+// Variables
+double grade1, grade2, grade3, avg;
+
+// Get First grade:
+cout << "Enter 1st grade: ";
+cin >> grade1;
+
+// Get Second grade
+cout << "Enter 2nd grade: ";
+cin >> grade2;
+
+// Get Third grade
+cout << "Enter 3rd grade: ";
+cin >> grade3;
+
+
+// Formula for average
+avg = (grade1 + grade2 + grade3) / TOTAL_GRADES;
+
+// Display the results
+cout << endl;
+cout << "Grades" << endl;
+cout << "-----------" << endl;
+cout << "1st grade: " << setw(7) << grade1 << endl;
+cout << "2nd grade: " << setw(7) << grade2 << endl;
+cout << "3rd grade: " << setw(7) << grade3 << endl;
+
+cout << "-----------" << endl;
+cout << "Average   : " << setw(7) << setprecision(1) << fixed << avg << endl;
+
+//Determine the letter grade based on the average
+if (avg >= A_score)
+{
+cout << "Your final grade is A.\n";
+}
+
+else
+{
+if (avg >= B_score)
+{
+cout << "Your final grade is B.\n";
+}
+else
+{
+
+if (avg >= C_score)
+{
+cout << "Your final grade is C.\n";
+}
+else
+{
+if (avg >= D_score)
+{
+cout << "Your final grade is D.\n";
+}
+
+if (avg >= F_score)
+{
+	cout << "Your final Grade is F.\n";
+}
+
+else //invalid
+{
+cout << "Invalid test score.\n";
+}
+
+}
+}
+}
+//Display if user earned 100 on a test
+
+if (grade1 == 100 || grade2 == 100 || grade3 == 100)
+{
+cout << "Congratulations! you earned 100 on a test.\n";
+}
+
+
+//pause screen
+//exit command);
+
+//to pause the screen
+cout << "\nPress Enter key to exit...";
+cin.ignore();
+cin.get();
+
+return 0;
+}
